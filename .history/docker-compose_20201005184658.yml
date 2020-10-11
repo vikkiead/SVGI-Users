@@ -1,0 +1,17 @@
+version: "3.8"
+services:  
+  postgres:
+    container_name: postgres3
+    image: postgres:latest
+    ports:
+    - "5433:5432"
+    volumes:
+    - /Users/Oluwatamilore/data/postgres:/data/postgres
+    env_file:
+    - docker.env
+    networks:
+    - postgres
+  build: "./dir" 
+networks:
+  postgres:
+    driver: bridge

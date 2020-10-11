@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    ports:
+    - "5434"
+    volumes:
+    -  \PostgreSQL\13\data
+    env_file:
+    - docker.env
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+  db:
+    image: postgres
+    environment:
+    POSTGRES_HOST: localhost
+    POSTGRES_PORT: 5434
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: tami1234
+    POSTGRES_DB: sgvi-1-minic
+ 
